@@ -64,7 +64,7 @@ class MonitorCollection extends Collection
             $promise = $client->requestAsync(
                 $monitor->uptime_check_method,
                 $monitor->url,
-                ['connect_timeout' => config('laravel-uptime-monitor.uptime_check.timeout_per_site')]
+                ['timeout' => config('laravel-uptime-monitor.uptime_check.timeout_per_site')]
             );
 
             yield $promise;
